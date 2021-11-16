@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JustMediaEditor</string>
+    <string name="duration_start">Start: %.2f s</string>
+    <string name="duration_end">End: %.2f s</string>
+    <string name="chosen_pic_count">已选: %d张</string>
+    <string name="duration_value">Start: %1$.2f s / End: %2$.2f s</string>
+    <string name="progress_value">%.2f</string>
+</resources>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+
+    <style name="editor_select_button_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="editor_select_textView_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="editor_select_path_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">10dp</item>
+    </style>
+
+    <style name="editor_pic_thumb_style">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="editor_select_spinner_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+    </style>
+
+    <style name="editor_position_textView_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">5dp</item>
+    </style>
+
+    <style name="editor_position_edittext_style">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">3dp</item>
+        <item name="android:inputType">numberSigned|numberDecimal</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="editor_clear_textView_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">5dp</item>
+        <item name="android:text">X</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">#f00</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="editor_duration_edittext_style">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="editor_rgb_edittext_style">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:inputType">number</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:hint">0 ~ 255</item>
+    </style>
+
+    <style name="editor_horizontal_layout_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <declare-styleable name="SquareProcessView">
+        <attr name="strokeColor" format="color|reference" />
+        <attr name="strokeWith" format="dimension|reference" />
+        <attr name="progressColor" format="color|reference" />
+        <attr name="textSize" format="dimension|reference" />
+        <attr name="textColor" format="color|reference" />
+    </declare-styleable>
+</resources>

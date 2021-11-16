@@ -1,0 +1,3 @@
+include ':mediaeditor'
+include ':app'
+rootProject.name = "JustMediaEditor"

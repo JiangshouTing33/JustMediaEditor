@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="24dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/btn_select_sticker_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择贴图:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"
+        />
+
+    <ImageView
+        android:id="@+id/im_sticker_image"
+        app:layout_constraintStart_toEndOf="@+id/btn_select_sticker_image"
+        app:layout_constraintTop_toTopOf="@+id/btn_select_sticker_image"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_select_sticker_image"
+        style="@style/editor_pic_thumb_style"
+        />
+
+    <TextView
+        android:id="@+id/tv_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_select_sticker_image"
+        android:layout_marginTop="20dp"
+        android:text="Position(-1 ~ 1):"
+        />
+
+    <TextView
+        android:id="@+id/tv_sticker_image_x"
+        app:layout_constraintStart_toEndOf="@+id/tv_position"
+        app:layout_constraintTop_toTopOf="@+id/tv_position"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_position"
+        style="@style/editor_position_textView_style"
+        android:text="X: "/>
+
+    <EditText
+        android:id="@+id/et_sticker_image_x"
+        app:layout_constraintStart_toEndOf="@+id/tv_sticker_image_x"
+        app:layout_constraintTop_toTopOf="@+id/tv_position"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_position"
+        style="@style/editor_position_edittext_style"/>
+
+    <TextView
+        android:id="@+id/tv_sticker_image_y"
+        app:layout_constraintStart_toEndOf="@+id/et_sticker_image_x"
+        app:layout_constraintTop_toTopOf="@+id/tv_position"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_position"
+        style="@style/editor_position_textView_style"
+        android:text="Y: "/>
+
+    <EditText
+        android:id="@+id/et_sticker_image_y"
+        app:layout_constraintStart_toEndOf="@+id/tv_sticker_image_y"
+        app:layout_constraintTop_toTopOf="@+id/tv_position"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_position"
+        style="@style/editor_position_edittext_style"/>
+
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_position"
+        android:layout_marginTop="20dp"
+        android:text="Duration(s):"
+        />
+
+    <TextView
+        android:id="@+id/tv_sticker_image_start"
+        app:layout_constraintStart_toEndOf="@+id/tv_duration"
+        app:layout_constraintTop_toTopOf="@+id/tv_duration"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_duration"
+        style="@style/editor_position_textView_style"
+        android:text="开始: "/>
+
+    <EditText
+        android:id="@+id/et_sticker_image_start"
+        app:layout_constraintStart_toEndOf="@+id/tv_sticker_image_start"
+        app:layout_constraintTop_toTopOf="@+id/tv_duration"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_duration"
+        style="@style/editor_duration_edittext_style"
+        android:hint="s"/>
+
+    <TextView
+        android:id="@+id/tv_sticker_image_end"
+        app:layout_constraintStart_toEndOf="@+id/et_sticker_image_start"
+        app:layout_constraintTop_toTopOf="@+id/tv_duration"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_duration"
+        style="@style/editor_position_textView_style"
+        android:text="结束: "/>
+
+    <EditText
+        android:id="@+id/et_sticker_image_end"
+        app:layout_constraintStart_toEndOf="@+id/tv_sticker_image_end"
+        app:layout_constraintTop_toTopOf="@+id/tv_duration"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_duration"
+        style="@style/editor_duration_edittext_style"
+        android:hint="s"/>
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_duration"
+        android:layout_marginTop="30dp"
+        android:text="确认"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

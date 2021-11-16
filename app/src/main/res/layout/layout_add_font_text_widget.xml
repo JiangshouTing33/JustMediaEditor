@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="24dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_input_text"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="输入文字:"
+        />
+
+    <EditText
+        android:id="@+id/et_input_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tv_input_text"
+        app:layout_constraintTop_toTopOf="@+id/tv_input_text"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_input_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="3dp"
+        android:paddingEnd="3dp"
+        android:textSize="12sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_chose_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_input_text"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="选择字体:"
+        />
+
+    <Spinner
+        android:id="@+id/spi_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/spinner_font"
+        app:layout_constraintStart_toEndOf="@+id/tv_chose_font"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_chose_font"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_chose_font"
+        android:layout_marginTop="20dp"
+        android:text="Position(-1 ~ 1):"
+        />
+
+    <TextView
+        android:id="@+id/tv_font_text_x"
+        app:layout_constraintStart_toEndOf="@+id/tv_position"
+        app:layout_constraintTop_toTopOf="@+id/tv_position"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_position"
+        style="@style/editor_position_textView_style"
+        android:text="X: "/>
+
+    <EditText
+        android:id="@+id/et_font_text_x"
+        app:layout_constraintStart_toEndOf="@+id/tv_font_text_x"
+        app:layout_constraintTop_toTopOf="@+id/tv_position"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_position"
+        style="@style/editor_position_edittext_style"/>
+
+    <TextView
+        android:id="@+id/tv_font_text_y"
+        app:layout_constraintStart_toEndOf="@+id/et_font_text_x"
+        app:layout_constraintTop_toTopOf="@+id/tv_position"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_position"
+        style="@style/editor_position_textView_style"
+        android:text="Y: "/>
+
+    <EditText
+        android:id="@+id/et_font_text_y"
+        app:layout_constraintStart_toEndOf="@+id/tv_font_text_y"
+        app:layout_constraintTop_toTopOf="@+id/tv_position"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_position"
+        style="@style/editor_position_edittext_style"/>
+
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_position"
+        android:layout_marginTop="20dp"
+        android:text="Duration(s):"
+        />
+
+    <TextView
+        android:id="@+id/tv_font_text_start"
+        app:layout_constraintStart_toEndOf="@+id/tv_duration"
+        app:layout_constraintTop_toTopOf="@+id/tv_duration"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_duration"
+        style="@style/editor_position_textView_style"
+        android:text="开始: "/>
+
+    <EditText
+        android:id="@+id/et_font_text_start"
+        app:layout_constraintStart_toEndOf="@+id/tv_font_text_start"
+        app:layout_constraintTop_toTopOf="@+id/tv_duration"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_duration"
+        style="@style/editor_duration_edittext_style"
+        android:hint="s"/>
+
+    <TextView
+        android:id="@+id/tv_font_text_end"
+        app:layout_constraintStart_toEndOf="@+id/et_font_text_start"
+        app:layout_constraintTop_toTopOf="@+id/tv_duration"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_duration"
+        style="@style/editor_position_textView_style"
+        android:text="结束: "/>
+
+    <EditText
+        android:id="@+id/et_font_text_end"
+        app:layout_constraintStart_toEndOf="@+id/tv_font_text_end"
+        app:layout_constraintTop_toTopOf="@+id/tv_duration"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_duration"
+        style="@style/editor_duration_edittext_style"
+        android:hint="s"/>
+
+    <TextView
+        android:id="@+id/tv_rgb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_duration"
+        android:layout_marginTop="20dp"
+        android:text="Color:"
+        />
+
+    <TextView
+        android:id="@+id/tv_font_color_r"
+        app:layout_constraintStart_toEndOf="@+id/tv_rgb"
+        app:layout_constraintTop_toTopOf="@+id/tv_rgb"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_rgb"
+        style="@style/editor_position_textView_style"
+        android:text="R:"/>
+
+    <EditText
+        android:id="@+id/et_font_color_r"
+        app:layout_constraintStart_toEndOf="@+id/tv_font_color_r"
+        app:layout_constraintTop_toTopOf="@+id/tv_rgb"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_rgb"
+        style="@style/editor_rgb_edittext_style"/>
+
+    <TextView
+        android:id="@+id/tv_font_color_g"
+        app:layout_constraintStart_toEndOf="@+id/et_font_color_r"
+        app:layout_constraintTop_toTopOf="@+id/tv_rgb"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_rgb"
+        style="@style/editor_position_textView_style"
+        android:text="G:"/>
+
+    <EditText
+        android:id="@+id/et_font_color_g"
+        app:layout_constraintStart_toEndOf="@+id/tv_font_color_g"
+        app:layout_constraintTop_toTopOf="@+id/tv_rgb"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_rgb"
+        style="@style/editor_rgb_edittext_style"/>
+
+    <TextView
+        android:id="@+id/tv_font_color_b"
+        app:layout_constraintStart_toEndOf="@+id/et_font_color_g"
+        app:layout_constraintTop_toTopOf="@+id/tv_rgb"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_rgb"
+        style="@style/editor_position_textView_style"
+        android:text="B:"/>
+
+    <EditText
+        android:id="@+id/et_font_color_b"
+        app:layout_constraintStart_toEndOf="@+id/tv_font_color_b"
+        app:layout_constraintTop_toTopOf="@+id/tv_rgb"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_rgb"
+        style="@style/editor_rgb_edittext_style"/>
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rgb"
+        android:layout_marginTop="20dp"
+        android:text="确认"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

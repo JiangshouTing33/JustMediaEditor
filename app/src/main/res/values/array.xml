@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_filter">
+        <item>None</item>
+        <item>爱情 </item>
+        <item>白嫩</item>
+        <item>白皙</item>
+        <item>春意</item>
+        <item>初吻</item>
+        <item>活力</item>
+        <item>悸动</item>
+        <item>丽人</item>
+        <item>日出</item>
+        <item>暖心</item>
+        <item>清澈</item>
+        <item>清澄</item>
+        <item>日落</item>
+        <item>日系</item>
+        <item>神秘</item>
+        <item>时尚</item>
+        <item>水光</item>
+        <item>微风</item>
+        <item>午后</item>
+        <item>相片</item>
+        <item>自然</item>
+    </string-array>
+
+    <string-array name="spinner_speed">
+        <item>0.5</item>
+        <item>1 </item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="transition_type">
+        <item>None</item>
+        <item>幻影</item>
+        <item>水渍</item>
+        <item>线条</item>
+        <item>重叠</item>
+        <item>水滴</item>
+        <item>顺时针</item>
+    </string-array>
+
+    <string-array name="spinner_resolution_video">
+        <item>原图</item>
+        <item>480p</item>
+        <item>720p</item>
+        <item>1080p</item>
+    </string-array>
+
+    <string-array name="spinner_resolution_image">
+        <item>480p</item>
+        <item>720p</item>
+        <item>1080p</item>
+    </string-array>
+
+    <string-array name="spinner_frame_rate">
+        <item>24</item>
+        <item>25</item>
+        <item>30</item>
+        <item>50</item>
+        <item>60</item>
+    </string-array>
+
+    <string-array name="spinner_font">
+        <item>华文仿宋</item>
+        <item>Antonio</item>
+        <item>MSYH</item>
+        <item>Times New Roman</item>
+    </string-array>
+</resources>

@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="18dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/edit_type_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_video_editor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="视频编辑"
+                    />
+
+                <RadioButton
+                    android:id="@+id/rb_picture_editor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="多图合成"
+                    />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/ll_chose_resolution"
+                style="@style/editor_horizontal_layout_style">
+
+                <TextView
+                    style="@style/editor_select_textView_style"
+                    android:text="选择分辨率:" />
+
+                <Spinner
+                    android:id="@+id/spi_resolution_video"
+                    style="@style/editor_select_spinner_style"
+                    android:entries="@array/spinner_resolution_video" />
+
+                <Spinner
+                    android:id="@+id/spi_resolution_image"
+                    android:visibility="gone"
+                    style="@style/editor_select_spinner_style"
+                    android:entries="@array/spinner_resolution_image" />
+
+                <TextView
+                    android:id="@+id/tv_select_frame_rate"
+                    style="@style/editor_select_textView_style"
+                    android:visibility="gone"
+                    android:text="选择帧率:" />
+
+                <Spinner
+                    android:id="@+id/spi_frame_rate"
+                    android:visibility="gone"
+                    style="@style/editor_select_spinner_style"
+                    android:entries="@array/spinner_frame_rate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_select_video"
+                style="@style/editor_horizontal_layout_style">
+                <Button
+                    android:id="@+id/btn_select_video"
+                    style="@style/editor_select_button_style"
+                    android:text="选择Video轨道:"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_video_path"
+                    style="@style/editor_select_path_style" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_select_multi_pic"
+                android:visibility="gone"
+                style="@style/editor_horizontal_layout_style">
+                <Button
+                    android:id="@+id/btn_select_multi_pic"
+                    style="@style/editor_select_button_style"
+                    android:layout_marginTop="0dp"
+                    android:text="选择合成图片:"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_pic_count"
+                    style="@style/editor_select_path_style" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#333333"
+                />
+
+            <LinearLayout
+                android:id="@+id/ll_select_audio"
+                style="@style/editor_horizontal_layout_style">
+
+                <Button
+                    android:id="@+id/btn_select_audio"
+                    style="@style/editor_select_button_style"
+                    android:text="选择Audio轨道:"
+                    android:layout_marginTop="0dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_audio_path"
+                    style="@style/editor_select_path_style"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/editor_horizontal_layout_style">
+
+                <Button
+                    android:id="@+id/btn_select_cover_image"
+                    style="@style/editor_select_button_style"
+                    android:text="选择封面图:"
+                    />
+
+                <ImageView
+                    android:id="@+id/im_cover_image"
+                    style="@style/editor_pic_thumb_style"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_clear_cover_image"
+                    style="@style/editor_clear_textView_style"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/editor_horizontal_layout_style">
+
+                <Button
+                    android:id="@+id/btn_select_mark_image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_select_cover_image"
+                    style="@style/editor_select_button_style"
+                    android:text="选择水印图:"
+                    />
+
+                <ImageView
+                    android:id="@+id/im_mark_image"
+                    app:layout_constraintStart_toEndOf="@+id/btn_select_mark_image"
+                    app:layout_constraintTop_toTopOf="@+id/btn_select_mark_image"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_select_mark_image"
+                    style="@style/editor_pic_thumb_style"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_mark_image_x"
+                    app:layout_constraintStart_toEndOf="@+id/im_mark_image"
+                    app:layout_constraintTop_toTopOf="@+id/btn_select_mark_image"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_select_mark_image"
+                    style="@style/editor_position_textView_style"
+                    android:text="X:"/>
+
+                <EditText
+                    android:id="@+id/et_mark_image_x"
+                    app:layout_constraintStart_toEndOf="@+id/tv_mark_image_x"
+                    app:layout_constraintTop_toTopOf="@+id/btn_select_mark_image"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_select_mark_image"
+                    style="@style/editor_position_edittext_style"
+                    android:hint="0 ~ 1"/>
+
+                <TextView
+                    android:id="@+id/tv_mark_image_y"
+                    app:layout_constraintStart_toEndOf="@+id/et_mark_image_x"
+                    app:layout_constraintTop_toTopOf="@+id/btn_select_mark_image"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_select_mark_image"
+                    style="@style/editor_position_textView_style"
+                    android:text="Y:"/>
+
+                <EditText
+                    android:id="@+id/et_mark_image_y"
+                    app:layout_constraintStart_toEndOf="@+id/tv_mark_image_y"
+                    app:layout_constraintTop_toTopOf="@+id/btn_select_mark_image"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_select_mark_image"
+                    style="@style/editor_position_edittext_style"
+                    android:hint="0 ~ 1"/>
+
+                <TextView
+                    android:id="@+id/tv_clear_mark_image"
+                    style="@style/editor_clear_textView_style" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_chose_filter"
+                style="@style/editor_horizontal_layout_style">
+
+                <TextView
+                    android:id="@+id/btn_chose_filter"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_select_mark_image"
+                    style="@style/editor_select_textView_style"
+                    android:clickable="false"
+                    android:text="选择滤镜:"
+                    />
+
+                <Spinner
+                    android:id="@+id/spi_filter"
+                    app:layout_constraintStart_toEndOf="@+id/btn_chose_filter"
+                    app:layout_constraintTop_toTopOf="@+id/btn_chose_filter"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_chose_filter"
+                    style="@style/editor_select_spinner_style"
+                    android:entries="@array/spinner_filter"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_chose_speed"
+                style="@style/editor_horizontal_layout_style">
+
+                <TextView
+                    android:id="@+id/tv_chose_speed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_chose_filter"
+                    style="@style/editor_select_textView_style"
+                    android:clickable="false"
+                    android:text="调整速度:"
+                    />
+
+                <Spinner
+                    android:id="@+id/spi_speed"
+                    app:layout_constraintStart_toEndOf="@+id/tv_chose_speed"
+                    app:layout_constraintTop_toTopOf="@+id/tv_chose_speed"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_chose_speed"
+                    style="@style/editor_select_spinner_style"
+                    android:entries="@array/spinner_speed"
+                    />
+
+                <CheckBox
+                    android:id="@+id/cb_with_audio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/spi_speed"
+                    app:layout_constraintTop_toTopOf="@+id/spi_speed"
+                    app:layout_constraintBottom_toBottomOf="@+id/spi_speed"
+                    android:layout_marginStart="10dp"
+                    android:checked="true"
+                    android:text="调整音频"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_chose_transition_type"
+                android:visibility="gone"
+                style="@style/editor_horizontal_layout_style">
+                <TextView
+                    android:id="@+id/tv_chose_transition_type"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_chose_speed"
+                    style="@style/editor_select_textView_style"
+                    android:clickable="false"
+                    android:text="选择转场:"
+                    />
+
+                <Spinner
+                    android:id="@+id/spi_transition_type"
+                    app:layout_constraintStart_toEndOf="@+id/tv_chose_transition_type"
+                    app:layout_constraintTop_toTopOf="@+id/tv_chose_transition_type"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_chose_transition_type"
+                    style="@style/editor_select_spinner_style"
+                    android:entries="@array/transition_type"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_select_background_music"
+                style="@style/editor_horizontal_layout_style">
+
+                <Button
+                    android:id="@+id/btn_select_background_music"
+                    style="@style/editor_select_button_style"
+                    android:text="选择背景音乐:"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_background_music_path"
+                    style="@style/editor_select_path_style"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_clear_background_music_path"
+                    style="@style/editor_clear_textView_style"
+                    />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_add_sticker_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_select_background_music"
+                style="@style/editor_select_button_style"
+                android:text="添加贴图"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcy_sticker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_add_sticker_image"
+                android:layout_marginTop="5dp"
+                />
+
+            <Button
+                android:id="@+id/btn_add_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rcy_sticker"
+                style="@style/editor_select_button_style"
+                android:text="添加文字"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcy_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_add_text"
+                android:layout_marginTop="5dp"
+                />
+
+            <Button
+                android:id="@+id/btn_start_editor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Start Editor"
+                />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
